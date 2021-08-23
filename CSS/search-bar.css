@@ -1,0 +1,53 @@
+ @charset "ISO-8859-1";
+
+
+* {
+	box-sizing: border-box;
+}
+
+form.searchbar input[type=text] {
+	position: absolute;
+	 
+	padding: 10px;
+	font-size: 13px;
+	border: 1px solid grey;
+	right:350px  ;
+	width: 50%;
+	background: #f1f1f1;
+	min-width: 140px;
+	 
+}
+
+form.searchbar button  
+* {
+	box-sizing: border-box;
+	 
+}
+
+form.searchbar input[type=text] {
+	position: absolute;
+	width: 25px;
+	padding: 10px;
+	font-size: 13px;
+	border: 1px solid grey;
+	right: 330px;
+	width: 50%;
+	background: #f1f1f1;
+}
+
+form.searchbar button {
+	position: absolute;
+	height: 8.3%;
+	width: 5%;
+	padding: 10px;
+	background: #04bd86;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-left: none;
+	cursor: pointer;
+	right: 272px;
+
+	 
+}
+ 
