@@ -89,7 +89,7 @@ public class SendEmailServlet extends HttpServlet {
 			message.setSubject("Your order from SWU");
 
 			// Now set the actual message
-			message.setText("Hello, " + firstName + " this message is to conferm your order. " + "Your order number is "
+			message.setText("Hello, " + firstName + " this message is to conform your order. " + "Your order number is "
 					+ "ordernumber. Your order will be shipped to " + address);
  
 
