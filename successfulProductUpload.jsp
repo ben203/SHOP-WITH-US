@@ -10,6 +10,9 @@ p {
 	position: fixed;
 	right: 30%;
 }
+body {
+zoom:150%;
+}
 </style>
 </head>
 <body>

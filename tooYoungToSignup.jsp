@@ -5,6 +5,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>One Place Shop</title>
+<style type="text/css">
+
+body {
+zoom:150%;
+}
+</style>
+ 
 </head>
 <body>
 	<img src="images/home1/sorry.jpg" height="300" width="500">

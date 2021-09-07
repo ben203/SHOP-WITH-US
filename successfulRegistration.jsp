@@ -11,6 +11,9 @@
 
 <style>
 body {
+zoom:150%;
+}
+body {
 	font-family: 'Roboto';
 	margin: 0;
 	padding: 0;

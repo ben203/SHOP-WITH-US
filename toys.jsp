@@ -11,55 +11,83 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+body {
+zoom:150%;
+}
+#menubar{
+  display: flex;
+    flex-wrap: nowrap;
+    
+}
+#search{
+ position:relative;
+left: 200px;
+
+top:1px;
+width:800px;
+min-width:10px;
+
+
+}
+#sbutn{
+ 
+left:473px;
+font-size:13px; 
+height:40px;
+width:58px;
+ 
+}
+
 .cart-size {
 	color: white;
 	background: #2E8B57;
-	position: absolute;
-	top: 10px;
-	right: 83px;
+	position: relative;
+	right: -840px;
+	top: -10px;
 	width: 25px;
 	height: 25px;
 }
 
 .cbutton {
-	position: relative;
-	left: 44%;
-	top: -33px;
+position: relative;
+	left: 33%;
+	top: -36px;
 	background: #04bd86;
 }
 
 #cart {
-	position: absolute;
-	right: 1px;
-	top: 3px;
+	position: relative;
+	right: -975px;
+	top: -120px;
 }
 
 #logout {
-	position: absolute;
-	right: 55px;
-	top: 3px;
+		position: relative;
+	right:-430px;
+  top:-42px;
 }
 
 #login {
-	position: absolute;
-	right: 10%;
-	top: 1%;
+	position: relative;
+	right: -775px;
+  top: -10px;
 }
 
 #signup {
-	position: absolute;
-	right: 1%;
-	top: 1%;
+	position: relative;
+	right: -780px;
+	top: -10px;
 }
 
 #user-greater {
-	position: absolute;
-	right: 18%;
+	position: relative;
+	right: -750px;
+	top: -10px;
 	color: #00995c;
 	font-weight: bold;
 	font-size: 17px;
 	font-family: Arial;
-	top: 0px;
+	top: -50px;
 }
 
 .hov:hover {
@@ -69,20 +97,21 @@
 
 <link rel="stylesheet" href="CSS/menu-bar.css">
 <link rel="stylesheet" href="CSS/search-bar.css">
-<link rel="stylesheet" href="CSS/slideshow.css">
+
 <link rel="stylesheet" href="CSS/icons.css">
 <link rel="stylesheet" href="CSS/login-popup.css">
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
 
-
-
-<form action="search" class="searchbar">
+<div>
+<form action="search" class="searchbar" id="search">
 	<input type="text" placeholder="Search Products" name="search-bar">
-	<button type="submit">
-		<i class="fa fa-search"></i>
-	</button>
+	 <button class="btn btn-outline-success" id="sbutn" type="submit">Search</button>
+	 
 </form>
+</div>
 
 <a href="home.jsp"> <img src="images/home1/logo.png" id="logo"
 	class="hov" title=ShopWithUs width="100" height="60">
@@ -92,7 +121,7 @@
 
 
 
-<div class="topnav">
+<div class="topnav" id="menubar" >
 	<a href="home.jsp">Home</a> <a href="bestSellers.jsp">Best Sellers</a>
 	<a href="customerService.jsp">Customer Service</a> <a href="books.jsp">Books</a>
 	<a href="toys.jsp">Toys</a> <a href="games.jsp">Games</a> <a
@@ -189,13 +218,10 @@
 	</div>
 <body>
 
-
-
-
-	<br>
-	<br>
-	<br>
-	<br>
+ <!-- adjusting the text and image positioning   -->
+<%if(session.getAttribute("email")==null){out.print("<br><br><br>");} %>
+ 
+ <br>
 	<img src="images/toys/dinosaur.jpg" width="150" height="100"
 		style="float: left">Dinosaur Toys for 3 to 7 Year Old Boys
 	<br> Price: $35.00

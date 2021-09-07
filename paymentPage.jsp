@@ -13,6 +13,9 @@
 
 
 <style>
+body {
+zoom:150%;
+}
 p1 {
 	position: absolute;
 	color: red;
@@ -280,6 +283,7 @@ select {
 
 				<%
 				ArrayList<ArrayList<String>> cart = (ArrayList<ArrayList<String>>) session.getAttribute("cart");
+ 
 				DecimalFormat df = new DecimalFormat("0.00");
 				double totalPrice = 0;
 

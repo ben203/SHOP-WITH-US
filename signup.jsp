@@ -8,7 +8,7 @@
 <html>
 <head>
 
-
+ 
 
 <script>
 	function validateForm() {
@@ -94,6 +94,9 @@ button {
 	color: red;
 	font-size: 18px;
 	right: -150px;
+}
+body {
+zoom:150%;
 }
 </style>
 

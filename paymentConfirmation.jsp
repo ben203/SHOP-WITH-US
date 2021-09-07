@@ -11,7 +11,9 @@ h1 {
 	position: absolute;
 	right: 35%;
 }
-
+body {
+zoom:150%;
+}
 p {
 	position: absolute;
 	top: 20%;
@@ -57,9 +59,9 @@ p {
 	 
 	 
 	 %><br> <br>
-		<br> Address:<%=(String) session.getAttribute("address") %><br>
+		<br> Address:<%=session.getAttribute("address") %><br>
 		<br>
-		<br> City:<%=(String) session.getAttribute("city") %><br>
+		<br> City:<%=session.getAttribute("city") %><br>
 		<br>
 		<br> Zipcode:
 		<%=(String) session.getAttribute("zipcode") %><br>

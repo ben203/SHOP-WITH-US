@@ -12,6 +12,9 @@ p {
 	top: 15%;
 	right: 30%;
 }
+body {
+zoom:150%;
+}
 </style>
 
 

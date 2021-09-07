@@ -10,6 +10,9 @@
 	position: absolute;
 	left: 37%;
 }
+body {
+zoom:150%;
+}
 </style>
 </head>
 <body>
