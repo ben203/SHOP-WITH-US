@@ -50,14 +50,14 @@ width:58px;
 
 .cbutton {
 position: relative;
-	left: 7%;
-	top: -10px;
+	left: 33%;
+	top: -60px;
 	background: #04bd86;
 }
 
 #cart {
 	position: relative;
-	right: -825px;
+	right: -975px;
 	top: -120px;
 }
 
@@ -92,9 +92,6 @@ position: relative;
 
 .hov:hover {
 	border-style: outset;
-}
-input[type='number']{
-    width: 131px;
 }
 </style>
 
@@ -191,48 +188,28 @@ input[type='number']{
 	%>
 
 	<script>
- 
-
-
-//popup login 
-function openForm() {
-  document.getElementById("myForm1").style.display = "block";
-}
-//close login popup 
-function closeForm() {
-  document.getElementById("myForm1").style.display = "none";
-} 
-
-//disable the textbox unless radio button for it is selected  
-function Checkradiobutton()
-{
-	 
-	var otherrb = document.getElementsByClassName('otherrb');
-	var otherrbtext = document.getElementsByClassName('otherrbtext');
-	for(var i=0; i<otherrb.length; i++){
-		if(otherrb[i].checked ){
-			 
-		 
-			otherrbtext[i].disabled=false;
-		 
-		}else{
-			
-			otherrbtext[i].disabled=true;
+		//popup login 
+		function openForm() {
+			document.getElementById("myForm1").style.display = "block";
 		}
-		
-	}
-	}
- 
-</script>
+		//close login popup 
+		function closeForm() {
+			document.getElementById("myForm1").style.display = "none";
+		}
+	</script>
+
+
 
 
 	<div class="form-popup" id="myForm1">
 		<form action="LoginAuthenticator" method="post" class="form-container">
 			<h1>Login</h1>
+
 			<label for="email"><b>Email</b></label> <input type="text"
 				placeholder="Enter Email" name="email" required> <label
 				for="psw"><b>Password</b></label> <input type="password"
 				placeholder="Enter Password" name="password" required>
+
 			<button type="submit" class="btn">Login</button>
 			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
 		</form>
@@ -241,156 +218,174 @@ function Checkradiobutton()
 
 
 
-	  <!-- adjusting the text and image positioning   -->
+	<div>
+
+ <!-- adjusting the text and image positioning   -->
 <%if(session.getAttribute("email")==null){out.print("<br><br><br>");} %>
-	 
-	<img src="images/gift-cards/apple.jpg" width="150" height="100"
-		style="float: left">
-	<br> Everything Apple
-	<br>
 
-	<form name="giftorder" action="additemstocart" method="get">
-		<input name="card" type="hidden" value="Everything Apple"><input
-			type="radio" name="amount" value="25.00" checked> 25 <input
-			type="radio" name="amount" value="50.00"> 50 <input
-			type="radio" name="amount" value="100.00"> 100 <input
-			type="radio" name="amount" class="otherrb"
-			onClick="Checkradiobutton()"> other <input
-			class="otherrbtext" size = "100"placeholder="other amount" type="number" min="1"
-			max="100000" name="othamount" onClick="Checkradiobutton()"> <input
-			name="formname" type="hidden" value="giftorder">
-		<button class="cbutton">Addtocart</button>
+		  <img src="images/books/book1.jpg"
+			width="150" height="100" style="float: left"> Title: The
+		Mountain Is You <br> Autor: Brianna Wiest <br> Price: $15.99
 		<br>
-	</form>
+
+
+		<form name="bookorder" action="additemstocart" method="get">
+
+
+			<input name="title" type="hidden" value="The Mountain Is You">
 
 
 
+			<input name="author" type="hidden" value="Brianna Wiest"> <input
+				name="price" type="hidden" value="15.99"> <input
+				name="formname" type="hidden" value="bookorder"> <input
+				name="bookbutton1" class="cbutton" type="submit" value="Addtocart" />
+		</form>
+
+
+
+		<br> <img src="images/books/book2.jpg" width="150" height="100"
+			style="float: left"> Title: GoodNight Moon <br> Autor:
+		Margaret Wise Brown <br> Price: $10.99 <br>
+
+		<form name="bookorder" action="additemstocart" method="get">
+
+
+			<input name="title" type="hidden" value="GoodNight Moon"> <input
+				name="author" type="hidden" value="Margaret Wise Brown"> <input
+				name="price" type="hidden" value="10.99"> <input
+				name="formname" type="hidden" value="bookorder"> <input
+				name="bookbutton2" class="cbutton" type="submit" value="Addtocart" />
+		</form>
+	</div>
 
 	<br>
-	<br>
-	<br>
-	<img src="images/gift-cards/google-play.jpg" width="150" height="100"
-		style="float: left">
-	<br> Google Play Store
+	<img src="images/books/book3.jpg" width="150" height="100"
+		style="float: left"> Title: Where's Spot?
+	<br> Autor: Eric Hill
+	<br> Price: $9.00
 	<br>
 
-	<form name="giftorder" action="additemstocart" method="get">
-		<input name="card" type="hidden" value="Google Play Store"> <input
-			type="radio" name="amount" value="25.00" checked> 25 <input
-			type="radio" name="amount" value="50.00"> 50 <input
-			type="radio" name="amount" value="100.00"> 100 <input
-			type="radio" name="amount" class="otherrb"
-			onClick="Checkradiobutton()"> other <input
-			class="otherrbtext" placeholder="other amount" type="number" min="1"
-			max="100000" name="othamount" onClick="Checkradiobutton()"> <input
-			name="formname" type="hidden" value="giftorder">
-		<button class="cbutton">Addtocart</button>
-		<br>
-	</form>
+	<form name="bookorder" action="additemstocart" method="get">
 
-	<br>
-	<br>
-	<br>
-	<img src="images/gift-cards/kohls.jpg" width="150" height="100"
-		style="float: left">
-	<br>Kohl's
-	<br>
-	<form name="giftorder" action="additemstocart" method="get">
-		<input name="card" type="hidden" value="Kohl's"> <input
-			type="radio" name="amount" value="25.00" checked> 25 <input
-			type="radio" name="amount" value="50.00"> 50 <input
-			type="radio" name="amount" value="100.00"> 100 <input
-			type="radio" name="amount" class="otherrb"
-			onClick="Checkradiobutton()"> other <input
-			class="otherrbtext" placeholder="other amount" type="number" min="1"
-			max="100000" name="othamount" onClick="Checkradiobutton()"> <input
-			name="formname" type="hidden" value="giftorder">
-		<button class="cbutton">Addtocart</button>
-		<br>
+
+		<input name="title" type="hidden" value="Where's Spot?"> <input
+			name="author" type="hidden" value="Eric Hill"> <input
+			name="price" type="hidden" value="9.00"> <input
+			name="formname" type="hidden" value="bookorder"> <input
+			name="bookbutton3" class="cbutton" type="submit" value="Addtocart" />
 	</form>
 
 	<br>
-	<br>
-	<br>
-	<img src="images/gift-cards/mastercard.jpg" width="150" height="100"
-		style="float: left">
-	<br>Mastercard
-	<br>
-	<form name="giftorder" action="additemstocart" method="get">
-		<input name="card" type="hidden" value="Mastercard"> <input
-			type="radio" name="amount" value="25.00" checked> 25 <input
-			type="radio" name="amount" value="50.00"> 50 <input
-			type="radio" name="amount" value="100.00"> 100 <input
-			type="radio" name="amount" class="otherrb"
-			onClick="Checkradiobutton()"> other <input
-			class="otherrbtext" placeholder="other amount" type="number" min="1"
-			max="100000" name="othamount" onClick="Checkradiobutton()"> <input
-			name="formname" type="hidden" value="giftorder">
-		<button class="cbutton">Addtocart</button>
-		<br>
-	</form>
-	<br>
-	<br>
-	<br>
-	<img src="images/gift-cards/starbucks.jpg" width="150" height="100"
-		style="float: left">
-	<br> Starbucks
-	<br>
-	<form name="giftorder" action="additemstocart" method="get">
-		<input name="card" type="hidden" value="Starbucks"> <input
-			type="radio" name="amount" value="25.00" checked> 25 <input
-			type="radio" name="amount" value="50.00"> 50 <input
-			type="radio" name="amount" value="100.00"> 100 <input
-			type="radio" name="amount" class="otherrb"
-			onClick="Checkradiobutton()"> other <input
-			class="otherrbtext" placeholder="other amount" type="number" min="1"
-			max="100000" name="othamount" onClick="Checkradiobutton()"> <input
-			name="formname" type="hidden" value="giftorder">
-		<button class="cbutton">Addtocart</button>
-		<br>
-	</form>
-	<br>
-	<br>
-	<br>
-	<img src="images/gift-cards/taco-bell.jpg" width="150" height="100"
-		style="float: left">
-	<br>Taco Bell
-	<br>
-	<form name="giftorder" action="additemstocart" method="get">
-
-		<input name="card" type="hidden" value="Taco Bell"> <input
-			type="radio" name="amount" value="25.00" checked> 25 <input
-			type="radio" name="amount" value="50.00"> 50 <input
-			type="radio" name="amount" value="100.00"> 100 <input
-			type="radio" name="amount" class="otherrb"
-			onClick="Checkradiobutton()"> other <input
-			class="otherrbtext" placeholder="other amount" type="number" min="1"
-			max="100000" name="othamount" onClick="Checkradiobutton()"> <input
-			name="formname" type="hidden" value="giftorder">
-		<button class="cbutton">Addtocart</button>
-		<br>
-	</form>
-	<br>
-	<br>
-	<br>
-	<img src="images/gift-cards/visa.png" width="150" height="100"
-		style="float: left">
-	<br>Visa
+	<img src="images/books/book4.jpg" width="150" height="100"
+		style="float: left"> Title: It Ends With Us
+	<br> Autor: Colleen Hoover
+	<br> Price: $25.99
 	<br>
 
-	<form name="giftorder" action="additemstocart" method="get">
-		<input name="card" type="hidden" value="Visa"> <input
-			type="radio" name="amount" value="25.00" checked> 25 <input
-			type="radio" name="amount" value="50.00"> 50 <input
-			type="radio" name="amount" value="100.00"> 100 <input
-			type="radio" name="amount" class="otherrb"
-			onClick="Checkradiobutton()"> other <input
-			class="otherrbtext" placeholder="other amount" type="number" min="1"
-			max="100000" name="othamount" onClick="Checkradiobutton()"> <input
-			name="formname" type="hidden" value="giftorder">
-		<button class="cbutton">Addtocart</button>
-		<br>
+	<form name="bookorder" action="additemstocart" method="get">
+
+
+		<input name="title" type="hidden" value="Colleen Hoover"> <input
+			name="author" type="hidden" value="Brianna Wiest"> <input
+			name="price" type="hidden" value="25.99"> <input
+			name="formname" type="hidden" value="bookorder"> <input
+			name="bookbutton4" class="cbutton" type="submit" value="Addtocart" />
 	</form>
+
+	<br>
+	<img src="images/books/book5.jpg" width="150" height="100"
+		style="float: left"> Title: Atomic Habits
+	<br> Autor: James Clear
+	<br> Price: $35.00
+	<br>
+
+	<form name="bookorder" action="additemstocart" method="get">
+
+
+		<input name="title" type="hidden" value="Atomic Habits"> <input
+			name="author" type="hidden" value="James Clear"> <input
+			name="price" type="hidden" value="35.00"> <input
+			name="formname" type="hidden" value="bookorder"> <input
+			name="bookbutton5" class="cbutton" type="submit" value="Addtocart" />
+	</form>
+
+	<br>
+	<img src="images/books/book6.jpg" width="150" height="100"
+		style="float: left"> Title: The Last Thing He Told Me
+	<br> Autor: Laura Dave
+	<br> Price: $20.00
+	<br>
+
+	<form name="bookorder" action="additemstocart" method="get">
+
+
+		<input name="title" type="hidden" value="The Last Thing He Told Me">
+
+
+
+		<input name="author" type="hidden" value="Laura Dave"> <input
+			name="price" type="hidden" value="20.00"> <input
+			name="formname" type="hidden" value="bookorder"> <input
+			name="bookbutton6" class="cbutton" type="submit" value="Addtocart" />
+	</form>
+
+	<br>
+	<img src="images/books/book7.jpg" width="150" height="100"
+		style="float: left">Title: Razorblade Tears
+	<br> Autor: S. A. Cosby
+	<br> Price: $15.99
+	<br>
+
+	<form name="bookorder" action="additemstocart" method="get">
+
+
+		<input name="title" type="hidden" value=" Razorblade Tears"> <input
+			name="author" type="hidden" value="Brianna Wiest"> <input
+			name="price" type="hidden" value="15.99"> <input
+			name="formname" type="hidden" value="bookorder"> <input
+			name="bookbutton7" class="cbutton" type="submit" value="Addtocart" />
+	</form>
+
+	<br>
+	<img src="images/books/book8.jpg" width="150" height="100"
+		style="float: left">Title: Corduroy
+	<br> Autor: Dan Freeman
+	<br> Price: $15.99
+	<br>
+
+	<form name="bookorder" action="additemstocart" method="get">
+
+
+		<input name="title" type="hidden" value="Corduroy"> <input
+			name="author" type="hidden" value="Dan Freeman"> <input
+			name="price" type="hidden" value="15.99"> <input
+			name="formname" type="hidden" value="bookorder"> <input
+			name="bookbutton8" class="cbutton" type="submit" value="Addtocart" />
+	</form>
+
+	<br>
+	<img src="images/books/book9.jpg" width="150" height="100"
+		style="float: left"> Title: Checkmate In Berlin
+	<br> Autor: Giles Milton
+	<br> Price: $44.00
+	<br>
+
+	<form name="bookorder" action="additemstocart" method="get">
+
+
+		<input name="title" type="hidden" value="Checkmate In Berlin">
+
+
+
+		<input name="author" type="hidden" value="Giles Milton"> <input
+			name="price" type="hidden" value="44.00"> <input
+			name="formname" type="hidden" value="bookorder"> <input
+			name="bookbutton9" class="cbutton" id="btnButton" type="submit"
+			value="Addtocart" />
+	</form>
+
+
 
 
 

@@ -10,6 +10,10 @@ button {
 	float: left;
 }
 
+body {
+zoom:150%;
+}
+
 p {
 	Position: absolute;
 	right: 207px;
